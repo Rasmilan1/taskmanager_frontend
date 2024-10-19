@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from './task.service';
+import { TaskService } from '../../task.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  selector: 'app-task-list',
+  templateUrl: './task-list.component.html',
+  styleUrl: './task-list.component.css'
 })
-export class AppComponent implements OnInit {
+export class TaskListComponent implements OnInit {
   title = 'task_manager';
   tasks:any[] = [];
 
@@ -18,5 +18,4 @@ export class AppComponent implements OnInit {
     this.taskservice.gettasks().subscribe((d:any)=>{
       this.tasks = d;
     })
-  }
-}
+  }}
