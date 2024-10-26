@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from '../../task.service';
+import { Task, TaskService } from '../../task.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-list',
@@ -8,14 +9,39 @@ import { TaskService } from '../../task.service';
 })
 export class TaskListComponent implements OnInit {
   title = 'task_manager';
-  tasks:any[] = [];
+  tasks: any[] = [];
+  searchText: string = ''
 
-  constructor (private taskservice :TaskService){
-    
+  constructor(private taskservice: TaskService ,private router : Router) {
+
   }
 
   ngOnInit(): void {
-    this.taskservice.gettasks().subscribe((d:any)=>{
+    this.taskservice.getTasks().subscribe((d: any) => {
       this.tasks = d;
     })
-  }}
+  }
+
+
+  onDelete(taskId: Task) {
+    this.taskservice.deleteTask(taskId).subscribe(() => {
+      alert("Task_Id "+taskId +" deleted")
+      this.loadTask();
+    })
+  }
+
+  loadTask() {
+    this.taskservice.getTasks().subscribe(d => {
+      this.tasks = d;
+    })
+  }
+
+  onEdit(taskId: number) {
+    this.router.navigate(['/task-edit', taskId])
+  }
+}
+
+
+
+
+

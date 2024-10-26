@@ -1,0 +1,49 @@
+.full-height {
+    height: 100vh; /* Full viewport height */
+  }
+  
+  header {
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient background */
+  }
+  
+  h1 {
+    font-weight: bold; /* Bold text for the heading */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  }
+  
+  .lead {
+    font-style: italic; /* Italic style for the lead paragraph */
+  }
+  
+  .flex-grow-1 {
+    background-color: #f8f9fa; /* Light background for the main area */
+  }
+  
+  h2 {
+    font-size: 2rem; /* Adjust heading size */
+  }
+  
+  .text-secondary {
+    font-weight: bold; /* Make the secondary text bold */
+  }
+  
+  .btn-light {
+    background-color: #ffffff; /* White background for buttons */
+    color: #343a40; /* Dark text color */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth effects on hover */
+  }
+  
+  .btn-light:hover {
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  }
+  
+  footer {
+    background-color: #f8f9fa; /* Light background for footer */
+    border-top: 1px solid #dee2e6; /* Light border at the top */
+  }
+  
+  footer p {
+    color: #6c757d; /* Dark gray text for footer */
+  }
+  

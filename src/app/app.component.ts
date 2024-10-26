@@ -8,14 +8,14 @@ import { TaskService } from './task.service';
 })
 export class AppComponent implements OnInit {
   title = 'task_manager';
-  tasks:any[] = [];
+  tasks: any[] = [];
 
-  constructor (private taskservice :TaskService){
-    
+  constructor(private taskservice: TaskService) {
+
   }
 
   ngOnInit(): void {
-    this.taskservice.gettasks().subscribe((d:any)=>{
+    this.taskservice.getTasks().subscribe((d: any) => {
       this.tasks = d;
     })
   }

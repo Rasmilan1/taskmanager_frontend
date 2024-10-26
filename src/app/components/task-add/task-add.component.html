@@ -1,49 +1,38 @@
-<div class="container card d-flex justify-content-center align-items-center mt-5" style="width: 500px;">
-    <h1>Add Tasks</h1>
-    <div class="row">
-        <form  style="width: 400px;" >
-            <div class="mb-3">
-                <label for="title" class="form-label">Email address</label>
-                <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
-            </div>
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="card shadow" style="width: 100%; max-width: 500px; border-radius: 15px; background-color: #fff;">
+        <div class="card-body p-4">
+            <h1 class="text-center mb-4 text-info">Add Tasks</h1>
+            <form [formGroup]="taskform" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" formControlName="title" placeholder="Enter task title" required>
+                </div>
 
-            <div class="mb-3">
-                <label for="title" class="form-label">Email address</label>
-                <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
-            </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="description" formControlName="description" placeholder="Enter task description" required>
+                </div>
 
-            <div class="mb-3">
-                <label for="description" class="form-label">description</label>
-                <input type="text" class="form-control" id="description" aria-describedby="emailHelp">
-            </div>
+                <div class="mb-3">
+                    <label for="dueDate" class="form-label">Due Date</label>
+                    <input type="date" class="form-control" id="dueDate" formControlName="dueDate" required>
+                </div>
 
-            <div class="mb-3">
-                <label for="dueDate" class="form-label">dueDate</label>
-                <input type="date" class="form-control" id="dueDate" aria-describedby="emailHelp">
-            </div>
-
-
-            <div class="mb-3">
-                    <label for="select">priority</label>
-                    <select class="form-control" id="select">
-                        <option>Option 1</option>
-                        <option>Option 2</option>
-                        <option>Option 3</option>
+                <div class="mb-3">
+                    <label for="priority" class="form-label">Priority</label>
+                    <select class="form-select" id="priority" formControlName="priority" required>
+                        <option value="" disabled selected>Select priority</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
                     </select>
-            </div>
+                </div>
 
-
-
-
-
-
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary">Submit</button>
-
-            </div>
-
-        </form>
-
+                <div class="d-flex justify-content-between mb-3">
+                    <button type="submit" class="btn btn-primary w-100 me-2">Submit</button>
+                    <button type="button" class="btn btn-outline-danger w-100" (click)="cancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
     </div>
-
 </div>
